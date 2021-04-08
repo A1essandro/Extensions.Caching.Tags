@@ -20,4 +20,4 @@ deploy:
     secure: E6iV/0EWXnyFgOzUzukLUvyrGzfbwUVPkPS/D3mYRW1+PF9LzF0SW10RVH7uskOH
   artifact: /.*\.nupkg/
   on:
-    branch: main
+    branch: release

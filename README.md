@@ -8,7 +8,7 @@ Marking _IMemoryCache_ entries by tags for easier removing.
 
 ## Installation
 
-EF Core is available on [NuGet](https://www.nuget.org/packages/Extensions.Caching.Tags/).
+**Extensions.Caching.Tags** is available on [NuGet](https://www.nuget.org/packages/Extensions.Caching.Tags/).
 
 `dotnet add package Extensions.Caching.Tags`
 
