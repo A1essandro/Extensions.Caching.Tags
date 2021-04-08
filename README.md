@@ -1,5 +1,9 @@
 # Extensions.Caching.Tags
 
+![AppVeyor branch](https://img.shields.io/appveyor/build/A1essandro/extensions-caching-tags/main)
+![Travis (.org) branch](https://img.shields.io/travis/A1essandro/Extensions.Caching.Tags/main)
+![Nuget](https://img.shields.io/nuget/dt/Extensions.Caching.Tags)
+
 Marking _IMemoryCache_ entries by tags for easier removing.
 
 ## Installation
