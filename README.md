@@ -23,9 +23,11 @@ services.AddMemoryCache();
 After getting service you may add tag or tags for caching entries. Just add it as last parameter:
 
 ```cs
+using Microsoft.Extensions.Caching.Memory; //Use common namespace for caching. No need to add something else
+
 _cache.Set(key, value, optionsOrExpiration, new CacheTags("tag0", "tag1"));
-_cache.Set(key, value, optionsOrExpiration, new CacheTags { "tag0", "tag1" }); //similar behaviour
-_cache.Set(key, value, optionsOrExpiration, new[] {"tag0", "tag1"}); //similar behaviour
+_cache.Set(key, value, optionsOrExpiration, new CacheTags { "tag0", "tag1" }); //Same behaviour as above
+_cache.Set(key, value, optionsOrExpiration, new[] {"tag0", "tag1"}); //Same behaviour as above
 ```
 
 `CacheTags` is inherited class from `List<string>`.
