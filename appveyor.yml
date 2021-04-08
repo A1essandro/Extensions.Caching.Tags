@@ -1,0 +1,23 @@
+version: 1.0.{build}
+image: Visual Studio 2019
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: "{version}"
+  package_version: "{version}"
+before_build:
+  - dotnet restore
+build:
+  verbosity: normal
+after_build:
+  - dotnet pack Extensions.Caching.Tags -v=n /p:Configuration=Release /p:PackageVersion=%APPVEYOR_BUILD_VERSION%
+artifacts:
+- path: '**\*.nupkg'
+  name: NuGet Packages
+deploy:
+  provider: NuGet
+  api_key:
+    secure: E6iV/0EWXnyFgOzUzukLUvyrGzfbwUVPkPS/D3mYRW1+PF9LzF0SW10RVH7uskOH
+  artifact: /.*\.nupkg/
+  on:
+    branch: master
