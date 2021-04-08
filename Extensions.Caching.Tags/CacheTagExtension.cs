@@ -86,7 +86,10 @@ namespace Microsoft.Extensions.Caching.Memory
         {
             if (TagToKeys.TryGetValue(tag, out var keys))
             {
-                foreach (var key in keys) cache.Remove(key);
+                lock (Locker)
+                {
+                    foreach (var key in keys) cache.Remove(key);
+                }
 
                 TagToKeys.TryRemove(tag, out var _);
             }
